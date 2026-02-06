@@ -282,6 +282,8 @@ function App() {
   const [isSticky, setIsSticky] = useState(false)
   const [language, setLanguage] = useState('en')
   const [theme, setTheme] = useState('green')
+  const [musicPlayerOpen, setMusicPlayerOpen] = useState(false)
+  const [chatbotOpen, setChatbotOpen] = useState(false)
 
   const t = translations[language]
 
@@ -309,9 +311,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-  }
+  const toggleMenu = () => { setMenuOpen(!menuOpen) }
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
@@ -359,8 +359,16 @@ function App() {
       <GitHubActivity translations={t} />
       <Contact translations={t} />
       <Footer scrollToSection={scrollToSection} translations={t} />
-      <SoundcloudPlayer translations={t} />
-      <Chatbot translations={t} />
+      <SoundcloudPlayer 
+        translations={t}
+        isOpen={musicPlayerOpen}
+        setIsOpen={setMusicPlayerOpen}
+      />
+      <Chatbot 
+        translations={t}
+        isOpen={chatbotOpen}
+        setIsOpen={setChatbotOpen}
+      />
     </div>
   )
 }
