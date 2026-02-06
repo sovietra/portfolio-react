@@ -3858,20 +3858,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* ========== FORCE HIDE MUSIC & CHAT BUTTONS EVERYWHERE ========== */
-
-/* Nuclear option - hide these buttons completely on documents pages */
-body .music-float-btn,
-body .chat-float-btn,
-body .music-player-modal,
-body .chatbot-modal {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  z-index: -9999 !important;
-}
-
 /* Extra specific selectors for documents pages */
 .documents-page *[class*="music"],
 .documents-page *[class*="chat"],
