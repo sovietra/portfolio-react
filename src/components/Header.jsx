@@ -108,9 +108,13 @@ const Header = ({
         {darkMode ? <Sun size={24} /> : <Moon size={24} />}
       </div>
 
-      <div className="menu-icon" onClick={toggleMenu}>
-        <Menu size={36} />
-      </div>
+      <div 
+  id="menu-icon"          // ← ADD THIS LINE
+  className="menu-icon"
+  onClick={toggleMenu}
+>
+  <i className='bx bx-menu'></i>
+</div>
     </header>
   )
 }
